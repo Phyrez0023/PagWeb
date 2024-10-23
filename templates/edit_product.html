@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Producto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Editar Producto</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label>ID</label>
+                <input type="text" class="form-control" name="id" value="{{ producto.id }}" readonly>
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" name="nombre" value="{{ producto.nombre }}" required>
+            </div>
+            <div class="form-group">
+                <label>Cantidad</label>
+                <input type="number" class="form-control" name="cantidad" value="{{ producto.cantidad }}" required>
+            </div>
+            <div class="form-group">
+                <label>Precio</label>
+                <input type="number" step="0.01" class="form-control" name="precio" value="{{ producto.precio }}" required>
+            </div>
+            <div class="form-group">
+                <label>Fecha de Vencimiento</label>
+                <input type="date" class="form-control" name="fecha_vencimiento" value="{{ producto.fecha_vencimiento }}" required>
+            </div>
+            <div class="form-group">
+                <label>Categoría</label>
+                <input type="text" class="form-control" name="categoria" value="{{ producto.categoria }}" required>
+            </div>
+            <button type="submit" class="btn btn-success">Actualizar Producto</button>
+        </form>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary mt-2">Regresar</a>
+    </div>
+</body>
+</html>
